@@ -51,6 +51,7 @@ body {
 }
 .base-dialog__rating-btn {
     all: unset;
+    position: relative;
     width: 2.8em;
     height: 2.8em;
     display: flex;
@@ -60,18 +61,91 @@ body {
     border-radius: 2em;
     background-color: var(--core-color-dark-blue);
     color: var(--core-color-light-grey);
+    cursor: pointer;
+}
+
+.base-dialog__rating-btn::before {
+    opacity: 0;
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--core-color-white);
+    transition: opacity .25s ease-in-out;
+}
+
+.base-dialog__rating-btn::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 2em;
+    background-color: var(--core-color-primary);
+    transition: opacity .25s ease-in-out;
+}
+
+.base-dialog__rating-btn:hover::before,
+.base-dialog__rating-btn:hover::after {
+    opacity: 1;
 }
 
 .base-dialog__button {
     all: unset;
+    position: relative;
     display: block;
     width: 100%;
     font-size: 1.8em;
     box-sizing: border-box;
     background-color: var(--core-color-primary);
-    padding: .85em 2em;
+    padding: .75em 2em;
     border-radius: 2.5em;
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.base-dialog__button::before {
+    opacity: 0;
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--core-color-primary);
+    transition: opacity .25s ease-in-out;
+}
+
+.base-dialog__button::after {
+    opacity: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    border-radius: 2.5em;
+    background-color: var(--core-color-white);
+    transition: opacity .25s ease-in-out;
+}
+
+.base-dialog__button:hover::before,
+.base-dialog__button:hover::after {
+    opacity: 1;
 }
