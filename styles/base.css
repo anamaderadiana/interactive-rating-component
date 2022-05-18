@@ -7,51 +7,66 @@
     --core-color-darker-blue: hsl(216, 12%, 8%);
  }
 
- body {
-     background-color: var(--core-color-darker-blue);
-     color: var(--core-color-white);
+body {
+    background-color: var(--core-color-darker-blue);
+    color: var(--core-color-white);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base-dialog {
+    width: 400px;
+    border-radius: 2.5em;
+    border: none;
+    background: linear-gradient(15deg, rgba(37, 45, 55, .5) 40%, rgba(37, 45, 55, 1) 100%);
+    color: var(--core-color-white);
+    padding: 3em;
+    box-sizing: border-box;
+}
+
+.base-dialog__rating-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 0 3em;
+}
+
+.base-dialog__title {
+    font-weight: 400;
+    font-size: 2.8em;
+    margin: 30px 0 20px;
  }
 
- .container {
-     width: 100%;
-     min-height: 100vh;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
- .base-dialog {
-     width: calc(100vw / 4);
-     min-width: 350px;
-     font-size: 1.6em;
-     border-radius: 2.2em;
-     border: none;
-     /* #1f2430 #181e28*/
-     background: linear-gradient(15deg, rgba(37, 45, 55, .5) 0%, rgba(37, 45, 55, 1) 100%);
-     color: var(--core-color-white);
-     padding: 2.2em;
- }
-
- .base-dialog__rating-group {
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-     padding: 2em 0;
- }
-
- .base-dialog__rating-btn {
+.base-dialog__text {
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: var(--core-color-light-grey);
+}
+.base-dialog__rating-btn {
     all: unset;
-    width: 3em;
-    height: 3em;
+    width: 2.8em;
+    height: 2.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
     border-radius: 2em;
-    text-align: center;
     background-color: var(--core-color-dark-blue);
- }
+    color: var(--core-color-light-grey);
+}
 
- .base-dialog__button {
+.base-dialog__button {
     all: unset;
     display: block;
     width: 100%;
+    font-size: 1.8em;
     box-sizing: border-box;
     background-color: var(--core-color-primary);
     padding: .85em 2em;
@@ -59,4 +74,4 @@
     letter-spacing: 1px;
     text-align: center;
     text-transform: uppercase;
- }
+}
